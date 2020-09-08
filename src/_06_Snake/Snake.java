@@ -2,6 +2,7 @@ package _06_Snake;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Snake {
@@ -36,12 +37,27 @@ public class Snake {
 	public void update() {
 		//1. use a switch statement to check on the currentDirection
 		//   of the snake and calculate its next x and y position.
+		switch(currentDirection) {
+		case RIGHT:
+			head.setLocation(new Location (head.getLocation().x + 1, head.getLocation().y) );
+			break;
+		case LEFT:
+			head.setLocation(new Location (head.getLocation().x - 1, head.getLocation().y));
+			break;
+		case UP:
+			head.setLocation(new Location (head.getLocation().x, head.getLocation().y + 1));
+			break;
+		case DOWN:
+			head.setLocation(new Location (head.getLocation().x, head.getLocation().y - 1));
+			break;	
+		}
 		
-
 		//2. Iterate through the SnakeSegments in reverse order
 		//2a. Update each snake segment to the location of the segment 
 		//    in front of it.
-		
+		for (SnakeSegment s : snake) {
+			
+		}
 		
 		//3. set the location of the head to the new location calculated in step 1
 		
